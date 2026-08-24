@@ -1,5 +1,4 @@
 const windowContainer = new Object();
-const music = new Audio("./assets/music.mp3");
 
 function musicAutoplay() {
         music.muted = false;
@@ -9,7 +8,7 @@ function musicAutoplay() {
         document.removeEventListener("keydown", musicAutoplay);
 };
 
-function windowInitalize(windowIdentifier, windowContentInitalize) {
+function windowInitialize(windowIdentifier, windowContentInitialize) {
     let window = windowContainer[windowIdentifier];
 
     window = document.createElement("div");
@@ -28,8 +27,8 @@ function windowInitalize(windowIdentifier, windowContentInitalize) {
     window.content = document.createElement("div");
     window.content.classList.add("window-content");
 
-    if (typeof windowContentInitalize === "function") {
-        window.content = windowContentInitalize(window.content);
+    if (typeof windowContentInitialize === "function") {
+        window.content = windowContentInitialize(window.content);
     };
 
     window.appendChild(window.content);
@@ -68,6 +67,35 @@ function windowSwitch(windowIdentifier) {
     return window;
 };
 
+windowInitialize("menu", (content) => {
+    content.logo = document.createElement("h1");
+    content.logo.id = "menu-logo";
+    content.logo.innerHTML = "<div>Metro</div><div>Mathic</div>";
+    content.appendChild(content.logo);
+
+    content.buttonPlay = document.createElement("button");
+    content.buttonPlay.id = "menu-button-play";
+    content.buttonPlay.innerHTML = "<span>Start</span>";
+    content.buttonPlay.addEventListener("click", () => windowSwitch("play"));
+
+    content.appendChild(content.buttonPlay);
+
+    return content;
+});
+
+windowInitialize("play", (content) => {
+    content.buttonBack = document.createElement("button");
+    content.buttonBack.id = "play-button-back";
+    content.buttonBack.innerHTML = "<img src=\"./assets/button-icon-back.svg\" width=\"30px\" height=\"30px\">";
+    content.buttonBack.addEventListener("click", () => windowSwitch("menu"));
+
+    content.appendChild(content.buttonBack);
+
+    return content;
+});
+
+const music = new Audio("./assets/music.mp3");
+
 music.muted = true;
 music.loop = true;
 
@@ -75,37 +103,5 @@ document.addEventListener("click", musicAutoplay);
 document.addEventListener("keydown", musicAutoplay);
 
 document.addEventListener("DOMContentLoaded", () => {
-    windowInitalize("menu", (content) => {
-        content.logo = document.createElement("h1");
-        content.logo.id = "menu-logo";
-        content.logo.innerHTML = "<div>Metro</div><div>Mathic</div>";
-        content.appendChild(content.logo);
-
-        content.buttonPlay = document.createElement("button");
-        content.buttonPlay.id = "menu-button-play";
-        content.buttonPlay.innerHTML = "<span>Start</span>";
-        content.buttonPlay.addEventListener("click", () => windowSwitch("play"));
-
-        content.appendChild(content.buttonPlay);
-
-        return content;
-    });
-
-    windowInitalize("play", (content) => {
-        content.buttonBack = document.createElement("button");
-        content.buttonBack.id = "play-button-back";
-        content.buttonBack.innerHTML = "<img src=\"./assets/button-icon-back.svg\" width=\"30px\" height=\"30px\">";
-        content.buttonBack.addEventListener("click", () => windowSwitch("menu"));
-
-        content.appendChild(content.buttonBack);
-
-        return content;
-    });
-
-    windowContainer.menu.classList.add("window-fade-in");
-    document.body.appendChild(windowContainer.menu);
-
-    setTimeout(() => {
-        windowContainer.menu.classList.remove("window-fade-in");
-    }, 1000);
+    windowSwitch("menu");
 });
