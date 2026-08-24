@@ -186,13 +186,13 @@ button#play-button-back {
     background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
 }
 
-button#menu-button-play-easy {
+button#play-button-easy {
     width: 150px;
     border: 5px solid #366640;
     background: linear-gradient(135deg, rgba(0, 255, 55, 1) 0%, rgba(61, 173, 85, 1) 25%, rgba(54, 102, 64, 1) 100%);
 }
 
-button#menu-button-play > span, button#menu-button-play-easy > span {
+button#menu-button-play > span, button#play-button-easy > span {
     font-size: 2.5em;
     font-family: "Rubik Maze", system-ui;
     font-weight: 800;
