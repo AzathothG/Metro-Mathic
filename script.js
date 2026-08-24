@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         content.buttonPlay = document.createElement("button");
         content.buttonPlay.id = "menu-button-play";
-        content.buttonPlay.innerHTML = "<span>START</span>";
+        content.buttonPlay.innerHTML = "<span>Start</span>";
         content.buttonPlay.addEventListener("click", () => windowSwitch("play"));
 
         content.appendChild(content.buttonPlay);
@@ -91,7 +91,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return content;
     });
 
-    windowInitalize("play");
+    windowInitalize("play", (content) => {
+        content.buttonBack = document.createElement("button");
+        content.buttonBack.id = "play-button-back";
+        content.buttonBack.innerHTML = "<img src=\"./assets/button-back.svg\" width=\"30px\" height=\"30px\">";
+        content.buttonBack.addEventListener("click", () => windowSwitch("menu"));
+
+        content.appendChild(content.buttonBack);
+
+        return content;
+    });
 
     windowContainer.menu.classList.add("window-fade-in");
     document.body.appendChild(windowContainer.menu);

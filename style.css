@@ -140,27 +140,12 @@ button#menu-button-play {
     transition: border-color 0.5s, scale 0.5s;
 }
 
-button#menu-button-play:focus {
-    border: 5px solid white;
-}
-
-button#menu-button-play:hover {
-    scale: 120%;
-}
-
-button#menu-button-play:active {
-    scale: 90%;
-    opacity: 80%;
-}
-
-button#menu-button-play > span {
-    pointer-events: none;
-    user-select: none;
-    font-size: 2.5em;
-    font-family: "Rubik Maze", system-ui;
-    font-weight: 800;
-    font-style: normal;
-    color: white;
+button#play-button-back {
+    width: 50px;
+    border: 5px solid #664036;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
+    transition: border-color 0.5s, scale 0.5s;
 }
 
 div#play-container {
@@ -174,20 +159,26 @@ div#play-container > div.window-background-transition > div {
     animation: play-background-transition 3.5s infinite linear;
 }
 
-/* .sprite-window {
-  width: 128px;
-  height: 64px;
-  background-image: url('./assets/Daoloth-Eye.png');
-  background-repeat: no-repeat;
-  background-position: 0px 0px;
-  animation: play-sprite 0.8s steps(4) infinite;
+button#menu-button-play:focus, button#play-button-back:focus {
+    border: 5px solid white;
 }
 
-@keyframes play-sprite {
-  from {
-    background-position: 0px 0px;
-  }
-  to {
-    background-position: -600px 0px;
-  }
-} */
+button#menu-button-play:hover, button#play-button-back:hover {
+    scale: 120%;
+}
+
+button#menu-button-play:active, button#play-button-back:active {
+    scale: 90%;
+    opacity: 80%;
+}
+
+button#menu-button-play > span {
+    pointer-events: none;
+    user-select: none;
+    font-size: 2.5em;
+    font-family: "Rubik Maze", system-ui;
+    font-weight: 800;
+    font-style: normal;
+    color: white;
+    text-transform: uppercase;
+}
