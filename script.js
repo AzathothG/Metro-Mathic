@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     windowInitalize("play", (content) => {
         content.buttonBack = document.createElement("button");
         content.buttonBack.id = "play-button-back";
-        content.buttonBack.innerHTML = "<img src=\"./assets/button-back.svg\" width=\"30px\" height=\"30px\">";
+        content.buttonBack.innerHTML = "<img src=\"./assets/button-icon-back.svg\" width=\"30px\" height=\"30px\">";
         content.buttonBack.addEventListener("click", () => windowSwitch("menu"));
 
         content.appendChild(content.buttonBack);
