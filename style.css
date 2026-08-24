@@ -101,25 +101,25 @@ div.window-background-gradient {
     animation: background-gradient 4s infinite ease-in-out alternate;
 }
 
-div.window > button {
+div.window button {
     border-radius: 10px;
     transition: border-color 0.5s, scale 0.5s;
 }
 
-div.window > button:focus {
+div.window-content button:focus {
     border: white;
 }
 
-div.window > button:hover {
+div.window-content button:hover {
     scale: 120%;
 }
 
-div.window > button:active {
+div.window-content button:active {
     scale: 90%;
     opacity: 80%;
 }
 
-div.window > button > * {
+div.window-content button > * {
     pointer-events: none;
     user-select: none;
 }
