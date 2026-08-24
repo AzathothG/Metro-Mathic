@@ -77,7 +77,6 @@ windowInitialize("menu", (content) => {
     content.buttonPlay.id = "menu-button-play";
     content.buttonPlay.innerHTML = "<span>Start</span>";
     content.buttonPlay.addEventListener("click", () => windowSwitch("play"));
-
     content.appendChild(content.buttonPlay);
 
     return content;
@@ -88,13 +87,13 @@ windowInitialize("play", (content) => {
     content.buttonBack.id = "play-button-back";
     content.buttonBack.innerHTML = "<img src=\"./assets/button-icon-back.svg\" width=\"30px\" height=\"30px\">";
     content.buttonBack.addEventListener("click", () => windowSwitch("menu"));
+    content.appendChild(content.buttonBack);
 
     content.buttonEasy = document.createElement("button");
     content.buttonEasy.id = "play-button-easy";
     content.buttonEasy.innerHTML = "<span>Easy</span>";
     content.buttonEasy.addEventListener("click", () => windowSwitch("game"));
-
-    content.appendChild(content.buttonBack);
+    content.appendChild(content.buttonEasy);
 
     return content;
 });
