@@ -57,7 +57,6 @@
     100% {}
 }
 
-
 body {
     margin: 0;
     width: 100vw;
@@ -102,6 +101,29 @@ div.window-background-gradient {
     animation: background-gradient 4s infinite ease-in-out alternate;
 }
 
+div.window > button {
+    border-radius: 10px;
+    transition: border-color 0.5s, scale 0.5s;
+}
+
+div.window > button:focus {
+    border: white;
+}
+
+div.window > button:hover {
+    scale: 120%;
+}
+
+div.window > button:active {
+    scale: 90%;
+    opacity: 80%;
+}
+
+div.window > button > * {
+    pointer-events: none;
+    user-select: none;
+}
+
 div#menu-container {
     background: white;
 }
@@ -135,21 +157,18 @@ button#menu-button-play {
     margin: 50px 0 0 0;
     width: 150px;
     border: 5px solid #366640;
-    border-radius: 10px;
     background: linear-gradient(135deg, rgba(0, 255, 55, 1) 0%, rgba(61, 173, 85, 1) 25%, rgba(54, 102, 64, 1) 100%);
-    transition: border-color 0.5s, scale 0.5s;
-}
-
-button#play-button-back {
-    width: 50px;
-    border: 5px solid #664036;
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
-    transition: border-color 0.5s, scale 0.5s;
 }
 
 div#play-container {
     background: yellowgreen;
+}
+
+div#play-container > div.window-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 div#play-container > div.window-background-transition > div {
@@ -159,22 +178,21 @@ div#play-container > div.window-background-transition > div {
     animation: play-background-transition 3.5s infinite linear;
 }
 
-button#menu-button-play:focus, button#play-button-back:focus {
-    border: 5px solid white;
+button#play-button-back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: 5px solid #664036;
+    background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
 }
 
-button#menu-button-play:hover, button#play-button-back:hover {
-    scale: 120%;
+button#menu-button-play-easy {
+    width: 150px;
+    border: 5px solid #366640;
+    background: linear-gradient(135deg, rgba(0, 255, 55, 1) 0%, rgba(61, 173, 85, 1) 25%, rgba(54, 102, 64, 1) 100%);
 }
 
-button#menu-button-play:active, button#play-button-back:active {
-    scale: 90%;
-    opacity: 80%;
-}
-
-button#menu-button-play > span {
-    pointer-events: none;
-    user-select: none;
+button#menu-button-play > span, button#menu-button-play-easy > span {
     font-size: 2.5em;
     font-family: "Rubik Maze", system-ui;
     font-weight: 800;

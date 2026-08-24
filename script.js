@@ -89,6 +89,11 @@ windowInitialize("play", (content) => {
     content.buttonBack.innerHTML = "<img src=\"./assets/button-icon-back.svg\" width=\"30px\" height=\"30px\">";
     content.buttonBack.addEventListener("click", () => windowSwitch("menu"));
 
+    content.buttonEasy = document.createElement("button");
+    content.buttonEasy.id = "play-button-easy";
+    content.buttonEasy.innerHTML = "<span>Easy</span>";
+    content.buttonEasy.addEventListener("click", () => windowSwitch("game"));
+
     content.appendChild(content.buttonBack);
 
     return content;
