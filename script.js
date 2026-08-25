@@ -92,10 +92,10 @@ windowInitialize("play", (content) => {
     content.navigationContainer.buttonBack.addEventListener("click", () => windowSwitch("menu"));
     content.navigationContainer.appendChild(content.navigationContainer.buttonBack);
 
-    content.navigationContainer.title = document.createElement("h1");
-    content.navigationContainer.title.id = "play-navigation-title";
-    content.navigationContainer.title.innerHTML = "Choose Difficulty";
-    content.navigationContainer.appendChild(content.navigationContainer.title);
+    content.navigationContainer.windowTitle = document.createElement("h1");
+    content.navigationContainer.windowTitle.id = "play-navigation-window-title";
+    content.navigationContainer.windowTitle.innerHTML = "Choose Difficulty";
+    content.navigationContainer.appendChild(content.navigationContainer.windowTitle);
 
     content.appendChild(content.navigationContainer);
 
