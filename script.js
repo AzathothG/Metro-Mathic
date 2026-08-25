@@ -124,6 +124,8 @@ windowInitialize("game", (content) => {
     content.navigationContainer.appendChild(content.navigationContainer.windowTitle);
 
     content.appendChild(content.navigationContainer);
+
+    return content;
 });
 
 const music = new Audio("./assets/music.mp3");
