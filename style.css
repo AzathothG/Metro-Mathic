@@ -222,5 +222,5 @@ div#game-container > div.window-background-transition > div {
     width: calc(100% + 160px);
     height: calc(100% + 160px);
     background: url("./assets/game-window-background.png") 0 / 160px repeat;
-    animation: play-background-transition 3.5s infinite linear;
+    animation: game-background-transition 4s infinite linear;
 }
