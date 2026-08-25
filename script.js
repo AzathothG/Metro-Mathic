@@ -85,7 +85,6 @@ windowInitialize("menu", (content) => {
 windowInitialize("play", (content) => {
     content.navigationContainer = document.createElement("div");
     content.navigationContainer.id = "play-navigation-container";
-    content.appendChild(content.navigationContainer);
 
     content.navigationContainer.buttonBack = document.createElement("button");
     content.navigationContainer.buttonBack.id = "play-navigation-button-back";
@@ -97,6 +96,8 @@ windowInitialize("play", (content) => {
     content.navigationContainer.title.id = "play-navigation-title";
     content.navigationContainer.title.innerHTML = "Choose Difficulty";
     content.navigationContainer.appendChild(content.navigationContainer.title);
+
+    content.appendChild(content.navigationContainer);
 
     content.buttonEasy = document.createElement("button");
     content.buttonEasy.id = "play-button-easy";
