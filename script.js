@@ -91,11 +91,11 @@ windowInitialize("play", (content) => {
     content.navigationContainer.buttonBack.id = "play-navigation-button-back";
     content.navigationContainer.buttonBack.innerHTML = "<img src=\"./assets/button-icon-back.svg\" width=\"30px\" height=\"30px\">";
     content.navigationContainer.buttonBack.addEventListener("click", () => windowSwitch("menu"));
-    content.appendChild(content.navigationContainer.buttonBack);
+    content.navigationContainer.appendChild(content.navigationContainer.buttonBack);
 
     content.navigationContainer.title = document.createElement("h1");
     content.navigationContainer.title.id = "play-navigation-title";
-    content.navigationContainer.title.innerHTML = "<span>Difficulty</span>";
+    content.navigationContainer.title.innerHTML = "Choose Difficulty";
     content.navigationContainer.appendChild(content.navigationContainer.title);
 
     content.buttonEasy = document.createElement("button");
