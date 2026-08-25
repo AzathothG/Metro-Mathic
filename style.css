@@ -107,7 +107,7 @@ div.window button {
 }
 
 div.window-content button:focus {
-    border: white;
+    border-color: white;
 }
 
 div.window-content button:hover {
@@ -178,12 +178,23 @@ div#play-container > div.window-background-transition > div {
     animation: play-background-transition 3.5s infinite linear;
 }
 
-button#play-button-back {
+div#play-navigation-container {
     position: absolute;
     top: 10px;
     left: 10px;
+    align-items: center;
+}
+
+button#play-navigation-button-back {
     border: 5px solid #664036;
     background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
+}
+
+h1#play-navigation-title {
+    margin: 0 0 0 10px;
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 0 0 10px black;
 }
 
 button#play-button-easy {
