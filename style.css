@@ -57,6 +57,13 @@
     100% {}
 }
 
+@keyframes game-background-transition {
+    0% {
+        transform: translate(-160px, -160px);
+    }
+    100% {}
+}
+
 body {
     margin: 0;
     width: 100vw;
@@ -107,7 +114,7 @@ div.window button {
 }
 
 div.window-content button:focus {
-    border-color: white;
+    border-color: white !important;
 }
 
 div.window-content button:hover {
@@ -124,6 +131,22 @@ div.window-content button > * {
     user-select: none;
 }
 
+div#menu-container > div.window-content, div#play-container > div.window-content, div#game-container > div.window-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button#menu-button-play > span, button#play-button-easy > span {
+    font-size: 2.5em;
+    font-family: "Rubik Maze", system-ui;
+    font-weight: 800;
+    font-style: normal;
+    color: white;
+    text-transform: uppercase;
+}
+
 div#menu-container {
     background: white;
 }
@@ -133,13 +156,6 @@ div#menu-container > div.window-background-transition > div {
     height: calc(100% + 110px);
     background: url("./assets/menu-window-background.png") 0 / 110px repeat;
     animation: menu-background-transition 3s infinite linear;
-}
-
-div#menu-container > div.window-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 h1#menu-logo {
@@ -160,15 +176,29 @@ button#menu-button-play {
     background: linear-gradient(135deg, rgba(0, 255, 55, 1) 0%, rgba(61, 173, 85, 1) 25%, rgba(54, 102, 64, 1) 100%);
 }
 
-div#play-container {
-    background: yellowgreen;
+div#play-navigation-container, div#game-navigation-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 10px;
+    left: 10px;
+    align-items: center;
 }
 
-div#play-container > div.window-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+button#play-navigation-button-back, div#game-navigation-container {
+    border: 5px solid #664036;
+    background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
+}
+
+h1#play-navigation-window-title, div#game-navigation-container {
+    margin: 0 0 0 10px;
+    font-size: 2.5em;
+    color: white;
+    text-shadow: 0 0 10px black;
+}
+
+div#play-container {
+    background: yellowgreen;
 }
 
 div#play-container > div.window-background-transition > div {
@@ -178,36 +208,19 @@ div#play-container > div.window-background-transition > div {
     animation: play-background-transition 3.5s infinite linear;
 }
 
-div#play-navigation-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    align-items: center;
-}
-
-button#play-navigation-button-back {
-    border: 5px solid #664036;
-    background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
-}
-
-h1#play-navigation-window-title {
-    margin: 0 0 0 10px;
-    font-size: 2.5em;
-    color: white;
-    text-shadow: 0 0 10px black;
-}
-
 button#play-button-easy {
     width: 150px;
     border: 5px solid #366640;
     background: linear-gradient(135deg, rgba(0, 255, 55, 1) 0%, rgba(61, 173, 85, 1) 25%, rgba(54, 102, 64, 1) 100%);
 }
 
-button#menu-button-play > span, button#play-button-easy > span {
-    font-size: 2.5em;
-    font-family: "Rubik Maze", system-ui;
-    font-weight: 800;
-    font-style: normal;
-    color: white;
-    text-transform: uppercase;
+div#game-container {
+    background: darkgreen;
+}
+
+div#game-container > div.window-background-transition > div {
+    width: calc(100% + 160px);
+    height: calc(100% + 160px);
+    background: url("./assets/game-window-background.png") 0 / 160px repeat;
+    animation: play-background-transition 3.5s infinite linear;
 }

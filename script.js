@@ -108,6 +108,24 @@ windowInitialize("play", (content) => {
     return content;
 });
 
+windowInitialize("game", (content) => {
+    content.navigationContainer = document.createElement("div");
+    content.navigationContainer = "game-navigation-container";
+
+    content.navigationContainer.buttonBack = document.createElement("button");
+    content.navigationContainer.buttonBack.id = "game-navigation-button-back";
+    content.navigationContainer.buttonBack.innerHTML = "<img src=\"./assets/button-icon-back.svg\" width=\"30px\" height=\"30px\">";
+    content.navigationContainer.buttonBack.addEventListener("click", () => windowSwitch("play"));
+    content.navigationContainer.appendChild(content.navigationContainer.buttonBack);
+
+    content.navigationContainer.windowTitle = document.createElement("h1");
+    content.navigationContainer.windowTitle.id = "game-navigation-window-title";
+    content.navigationContainer.windowTitle.innerHTML = "Playing Easy Mode";
+    content.navigationContainer.appendChild(content.navigationContainer.windowTitle);
+
+    content.appendChild(content.navigationContainer);
+});
+
 const music = new Audio("./assets/music.mp3");
 
 music.muted = true;
