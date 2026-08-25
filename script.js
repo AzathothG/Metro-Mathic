@@ -110,7 +110,7 @@ windowInitialize("play", (content) => {
 
 windowInitialize("game", (content) => {
     content.navigationContainer = document.createElement("div");
-    content.navigationContainer = "game-navigation-container";
+    content.navigationContainer.id = "game-navigation-container";
 
     content.navigationContainer.buttonBack = document.createElement("button");
     content.navigationContainer.buttonBack.id = "game-navigation-button-back";
