@@ -185,12 +185,12 @@ div#play-navigation-container, div#game-navigation-container {
     align-items: center;
 }
 
-button#play-navigation-button-back, div#game-navigation-button-back {
+button#play-navigation-button-back, button#game-navigation-button-back {
     border: 5px solid #664036;
     background: linear-gradient(135deg, rgba(255, 51, 0, 1) 0%, rgba(173, 83, 61, 1) 25%, rgba(102, 64, 54, 1) 100%);
 }
 
-h1#play-navigation-window-title, div#game-navigation-window-title {
+h1#play-navigation-window-title, h1#game-navigation-window-title {
     margin: 0 0 0 10px;
     font-size: 2.5em;
     color: white;
