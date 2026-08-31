@@ -117,8 +117,10 @@ windowInitialize("play", (content) => {
 
     content.appendChild(content.buttonEasy);
 
+    content.buttonMedium = document.createElement("button");
     content.buttonMedium.id = "play-button-medium";
     content.buttonMedium.innerHTML = "<span>Medium</span>";
+
     content.buttonMedium.addEventListener("click", () => windowSwitch("game", (content) => {
         difficulty = 2;
 
@@ -129,6 +131,7 @@ windowInitialize("play", (content) => {
 
     content.appendChild(content.buttonMedium);
 
+    content.buttonHard = document.createElement("button");
     content.buttonHard.id = "play-button-hard";
     content.buttonHard.innerHTML = "<span>Hard</span>";
 
