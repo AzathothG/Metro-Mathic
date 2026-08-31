@@ -135,7 +135,7 @@ windowInitialize("play", (content) => {
     content.buttonHard.id = "play-button-hard";
     content.buttonHard.innerHTML = "<span>Hard</span>";
 
-    content.bttonHard.addEventListener("click", () => windowSwitch("game", (content) => {
+    content.buttonHard.addEventListener("click", () => windowSwitch("game", (content) => {
         difficulty = 3;
 
         content.navigationContainer.windowTitle.innerHTML = "Playing Hard Mode";
