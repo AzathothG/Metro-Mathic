@@ -38,13 +38,17 @@ function windowInitialize(windowIdentifier, windowContentInitialize) {
     return window;
 };
 
-function windowSwitch(windowIdentifier) {
+function windowSwitch(windowIdentifier, windowContentInitialize) {
     let window = windowContainer[windowIdentifier];
     let currentWindow = document.querySelector(".window");
 
     function windowLoad() {
         window.classList.add("window-fade-in");
         document.body.appendChild(window);
+
+        if (typeof windowContentInitialize === "function") {
+            window.content = windowContentInitialize(window.content);
+        };
 
         setTimeout(() => {
             window.classList.remove("window-fade-in");
@@ -102,8 +106,41 @@ windowInitialize("play", (content) => {
     content.buttonEasy = document.createElement("button");
     content.buttonEasy.id = "play-button-easy";
     content.buttonEasy.innerHTML = "<span>Easy</span>";
-    content.buttonEasy.addEventListener("click", () => windowSwitch("game"));
+
+    content.buttonEasy.addEventListener("click", () => windowSwitch("game", (content) => {
+        difficulty = 1;
+
+        content.navigationContainer.windowTitle.innerHTML = "Playing Easy Mode";
+
+        return content;
+    }));
+
     content.appendChild(content.buttonEasy);
+
+    content.buttonMedium.id = "play-button-medium";
+    content.buttonMedium.innerHTML = "<span>Medium</span>";
+    content.buttonMedium.addEventListener("click", () => windowSwitch("game", (content) => {
+        difficulty = 2;
+
+        content.navigationContainer.windowTitle.innerHTML = "Playing Medium Mode";
+
+        return content;
+    }));
+
+    content.appendChild(content.buttonMedium);
+
+    content.buttonHard.id = "play-button-hard";
+    content.buttonHard.innerHTML = "<span>Hard</span>";
+
+    content.bttonHard.addEventListener("click", () => windowSwitch("game", (content) => {
+        difficulty = 3;
+
+        content.navigationContainer.windowTitle.innerHTML = "Playing Hard Mode";
+
+        return content;
+    }));
+
+    content.appendChild(content.buttonHard);
 
     return content;
 });
@@ -120,7 +157,6 @@ windowInitialize("game", (content) => {
 
     content.navigationContainer.windowTitle = document.createElement("h1");
     content.navigationContainer.windowTitle.id = "game-navigation-window-title";
-    content.navigationContainer.windowTitle.innerHTML = "Playing Easy Mode";
     content.navigationContainer.appendChild(content.navigationContainer.windowTitle);
 
     content.appendChild(content.navigationContainer);
@@ -132,6 +168,8 @@ const music = new Audio("./assets/music.mp3");
 
 music.muted = true;
 music.loop = true;
+
+let difficulty;
 
 document.addEventListener("click", musicAutoplay);
 document.addEventListener("keydown", musicAutoplay);

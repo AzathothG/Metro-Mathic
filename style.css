@@ -208,10 +208,24 @@ div#play-container > div.window-background-transition > div {
     animation: play-background-transition 3.5s infinite linear;
 }
 
-button#play-button-easy {
+button#play-button-easy, button#play-button-medium, button#play-button-hard {
+    margin: 0 0 15px 0;
     width: 150px;
+}
+
+button#play-button-easy {
     border: 5px solid #366640;
     background: linear-gradient(135deg, rgba(0, 255, 55, 1) 0%, rgba(61, 173, 85, 1) 25%, rgba(54, 102, 64, 1) 100%);
+}
+
+button#play-button-medium {
+    border: 5px solid #666636;
+    background: linear-gradient(135deg, rgba(255, 255, 0, 1) 0%, rgba(173, 173, 61, 1) 25%, rgba(102, 102, 54, 1) 100%);
+}
+
+button#play-button-hard {
+    border: 5px solid #663636;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 1) 0%, rgba(196, 77, 77, 1) 25%, rgba(102, 54, 54, 1) 100%);
 }
 
 div#game-container {
