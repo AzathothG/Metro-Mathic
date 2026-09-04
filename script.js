@@ -167,10 +167,10 @@ windowInitialize("game", (content) => {
     return content;
 });
 
-const music = new Audio("./assets/music.mp3");
+const music = new Audio("./assets/Metro Mathic Menu.mp3");
 
 music.muted = true;
-music.loop = true;
+music.loop = false;
 
 let difficulty;
 
